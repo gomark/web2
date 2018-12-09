@@ -7,7 +7,7 @@ steps:
 #images: ['gcr.io/$PROJECT_ID/quickstart-image:latest']
 images:
   - 'gcr.io/$PROJECT_ID/quickstart-image:latest'
-#steps:
+steps:
 - name: 'gcr.io/cloud-builders/kubectl'
   args:
   - 'set'
