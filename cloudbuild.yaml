@@ -11,7 +11,7 @@ steps:
   - 'set'
   - 'image'
   - 'deployment/tomcat-1'
-  - 'my-tomcat=gcr.io/my-project/quickstart-image:latest'
+  - 'my-tomcat=gcr.io/$PROJECT_ID/quickstart-image:latest'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=asia-southeast1-b'
   - 'CLOUDSDK_CONTAINER_CLUSTER=standard-cluster-1'
