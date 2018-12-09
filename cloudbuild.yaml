@@ -3,6 +3,7 @@ steps:
   args: ['clean', 'install']
 - name: 'gcr.io/cloud-builders/docker'
   args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/quickstart-image', '.' ]
+images: ['gcr.io/$PROJECT_ID/quickstart-image:$COMMIT_SHA']
 images: ['gcr.io/$PROJECT_ID/quickstart-image:latest']
 
 steps:
