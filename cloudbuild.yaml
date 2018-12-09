@@ -10,8 +10,8 @@ steps:
   args:
   - 'set'
   - 'image'
-  - 'deployment/my-deployment'
-  - 'my-container=gcr.io/my-project/quickstart-image:latest'
+  - 'deployment/tomcat-1'
+  - 'my-tomcat=gcr.io/my-project/quickstart-image:latest'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=asia-southeast1-b'
   - 'CLOUDSDK_CONTAINER_CLUSTER=standard-cluster-1'
