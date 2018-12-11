@@ -30,7 +30,8 @@ public class Servlet1 extends HttpServlet {
 		response.getWriter().append("hey-z updated Servlet1 (web2) at: ").append(request.getContextPath());
 		response.getWriter().append("\n");
 		response.getWriter().append("env-LANGUAGE=" + System.getenv("LANGUAGE") + "\n");
-		response.getWriter().append("env-API_KEY=" + System.getenv("API_KEY") + "\n");		
+		response.getWriter().append("env-API_KEY=" + System.getenv("API_KEY") + "\n");
+		response.getWriter().append("env-RESTSERVICE1=" + System.getenv("RESTSERVICE1") + "\n");
 	}
 
 	/**
