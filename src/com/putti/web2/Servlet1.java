@@ -29,8 +29,8 @@ public class Servlet1 extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("hey-z updated Servlet1 (web2) at: ").append(request.getContextPath());
 		response.getWriter().append("\n");
-		response.getWriter().append("LANGUAGE=" + System.getenv("LANGUAGE") + "\n");
-		response.getWriter().append("API_KEY=" + System.getenv("API_KEY") + "\n");		
+		response.getWriter().append("env-LANGUAGE=" + System.getenv("LANGUAGE") + "\n");
+		response.getWriter().append("env-API_KEY=" + System.getenv("API_KEY") + "\n");		
 	}
 
 	/**
