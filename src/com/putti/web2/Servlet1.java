@@ -13,6 +13,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.hadoop.hbase.shaded.org.mortbay.log.Log;
+
+import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
+
 
 /**
  * Servlet implementation class Servlet1
@@ -40,8 +44,11 @@ public class Servlet1 extends HttpServlet {
 		response.getWriter().append("env-API_KEY=" + System.getenv("API_KEY") + "\n");
 		response.getWriter().append("env-RESTSERVICE1=" + System.getenv("RESTSERVICE1") + "\n");
 		response.getWriter().append("calling some rest from restservice1:\n");
-		
+		response.getWriter().append("current_credential=" + GoogleCredential.getApplicationDefault().getServiceAccountId());
 		this.testRest(request, response);
+		
+		//System.out.println("current_credential=" + GoogleCredential.getApplicationDefault().getServiceAccountId());
+		
 	}
 	
 	private void testRest(HttpServletRequest request, HttpServletResponse response) {
