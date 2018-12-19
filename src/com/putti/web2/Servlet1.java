@@ -34,7 +34,7 @@ public class Servlet1 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("xxxhey updated Servlet1 (web2) at: ").append(request.getContextPath());
+		response.getWriter().append("web2 --- xxxhey updated Servlet1 (web2) at: ").append(request.getContextPath());
 		response.getWriter().append("\n");
 		response.getWriter().append("env-LANGUAGE=" + System.getenv("LANGUAGE") + "\n");
 		response.getWriter().append("env-API_KEY=" + System.getenv("API_KEY") + "\n");
