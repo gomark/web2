@@ -19,7 +19,7 @@ steps:
   #- 'my-tomcat=gcr.io/$PROJECT_ID/quickstart-image:$COMMIT_SHA'
   - '${_POD_SPEC}=gcr.io/$PROJECT_ID/quickstart-image:$COMMIT_SHA'
   env:
-  - 'CLOUDSDK_COMPUTE_ZONE=asia-southeast1-b'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=standard-cluster-1'
+  - 'CLOUDSDK_COMPUTE_ZONE=${_CLOUDSDK_COMPUTE_ZONE}'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=${_CLOUDSDK_CONTAINER_CLUSTER}'
   
 images: ['gcr.io/$PROJECT_ID/quickstart-image:$COMMIT_SHA']
