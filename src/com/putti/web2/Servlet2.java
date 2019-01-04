@@ -27,7 +27,7 @@ public class Servlet2 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("This is production :Served at: ").append(request.getContextPath());
+		response.getWriter().append("This is canary :Served at: ").append(request.getContextPath());
 	}
 
 	/**
