@@ -27,7 +27,7 @@ public class Servlet2 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Canary version- hey-z updated Servlet2:Served at: ").append(request.getContextPath());
+		response.getWriter().append("Canary2 version- hey-z updated Servlet2:Served at: ").append(request.getContextPath());
 	}
 
 	/**
