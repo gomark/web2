@@ -27,7 +27,9 @@ public class Servlet2 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("This is new version at ETDA :Served at: ").append(request.getContextPath());
+		response.getWriter().append("This is new version for load test :Served at: ").append(request.getContextPath());
+		long mil = System.currentTimeMillis();
+		System.out.println("currentMil" + String.valueOf(mil));
 	}
 
 	/**
