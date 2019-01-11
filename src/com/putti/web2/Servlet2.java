@@ -26,9 +26,9 @@ public class Servlet2 extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("This is new version for load test :Served at: ").append(request.getContextPath());
 		long mil = System.currentTimeMillis();
+		response.getWriter().append("This is new version for load test :Served at: ").append(request.getContextPath()).append(String.valueOf(mil));
+		
 		System.out.println("currentMil" + String.valueOf(mil));
 	}
 
