@@ -56,6 +56,7 @@ public class TestBigTableAPI extends HttpServlet {
     private void readSingleRowFromKey(HttpServletRequest request, HttpServletResponse response) throws IOException {
     	try {
     		Connection conn = BigtableConfiguration.connect(this.projectId, this.instanceId);
+    		log.info("connected?");
     		Table table = conn.getTable(TableName.valueOf(this.tableName));
         	String rowKey = "greeting1";
             Result getResult = table.get(new Get(Bytes.toBytes(rowKey)));
@@ -63,6 +64,7 @@ public class TestBigTableAPI extends HttpServlet {
             	            	            	
             	String greeting = Bytes.toString(getResult.getValue(this.columeFamily, this.columnName));
             	response.getWriter().append("\nGreeting={" + greeting + "}");
+            	log.info("txt=" + greeting);
 
             } else {
             	response.getWriter().append("\nNot found rowKey=" + rowKey);
