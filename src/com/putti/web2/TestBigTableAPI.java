@@ -55,6 +55,7 @@ public class TestBigTableAPI extends HttpServlet {
 
     private void readSingleRowFromKey(HttpServletRequest request, HttpServletResponse response) throws IOException {
     	try {
+    		log.info("before connect..");
     		Connection conn = BigtableConfiguration.connect(this.projectId, this.instanceId);
     		log.info("connected?");
     		Table table = conn.getTable(TableName.valueOf(this.tableName));
