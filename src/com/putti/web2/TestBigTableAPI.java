@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.TableName;
 import org.apache.hadoop.hbase.client.Connection;
+import org.apache.hadoop.hbase.client.ConnectionFactory;
 import org.apache.hadoop.hbase.client.Get;
 import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.client.ResultScanner;
@@ -56,7 +58,14 @@ public class TestBigTableAPI extends HttpServlet {
     private void readSingleRowFromKey(HttpServletRequest request, HttpServletResponse response) throws IOException {
     	try {
     		log.info("before connect..");
-    		Connection conn = BigtableConfiguration.connect(this.projectId, this.instanceId);
+    		Configuration config = BigtableConfiguration.configure(projectId, instanceId);
+    		Connection conn = BigtableConfiguration.connect(config);
+    		
+    		//Connection conn = BigtableConfiguration.connect(this.projectId, this.instanceId);
+    		
+    		//Connection conn = ConnectionFactory.createConnection(config);
+    		
+    		
     		log.info("connected?");
     		Table table = conn.getTable(TableName.valueOf(this.tableName));
         	String rowKey = "greeting1";
@@ -70,6 +79,8 @@ public class TestBigTableAPI extends HttpServlet {
             } else {
             	response.getWriter().append("\nNot found rowKey=" + rowKey);
             }
+            
+            conn.close();
                 		
     	} catch (Exception e) {
     		log.log(Level.SEVERE, e.toString());
