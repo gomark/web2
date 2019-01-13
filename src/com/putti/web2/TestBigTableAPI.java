@@ -80,6 +80,8 @@ public class TestBigTableAPI extends HttpServlet {
             	response.getWriter().append("\nNot found rowKey=" + rowKey);
             }
             
+            long mil = System.currentTimeMillis();
+            log.info("currentMil " + String.valueOf(mil));
             conn.close();
                 		
     	} catch (Exception e) {
