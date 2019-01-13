@@ -29,7 +29,7 @@ public class Servlet2 extends HttpServlet {
 		long mil = System.currentTimeMillis();
 		response.getWriter().append("This is new version for load test :Served at: ").append(request.getContextPath()).append(String.valueOf(mil));
 		
-		System.out.println("currentMil" + String.valueOf(mil));
+		System.out.println("currentMil " + String.valueOf(mil));
 	}
 
 	/**
