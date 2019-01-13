@@ -53,15 +53,14 @@ public class TestBigTableAPI extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-    private void readSingleRowFromKey(HttpServletRequest request, HttpServletResponse response) {
+    private void readSingleRowFromKey(HttpServletRequest request, HttpServletResponse response) throws IOException {
     	try {
     		Connection conn = BigtableConfiguration.connect(this.projectId, this.instanceId);
     		Table table = conn.getTable(TableName.valueOf(this.tableName));
         	String rowKey = "greeting1";
             Result getResult = table.get(new Get(Bytes.toBytes(rowKey)));
             if (getResult.isEmpty() == false) {
-            	
-            	
+            	            	            	
             	String greeting = Bytes.toString(getResult.getValue(this.columeFamily, this.columnName));
             	response.getWriter().append("\nGreeting={" + greeting + "}");
 
@@ -71,6 +70,7 @@ public class TestBigTableAPI extends HttpServlet {
                 		
     	} catch (Exception e) {
     		log.log(Level.SEVERE, e.toString());
+    		response.getWriter().append("\ngot exception: " + e.toString());
     	}
     	    	
     }    
