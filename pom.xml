@@ -49,7 +49,14 @@
 		<groupId>io.grpc</groupId>
 		<artifactId>grpc-core</artifactId>
 		<version>1.16.1</version>
-	</dependency>	
+	</dependency>
+	
+	<dependency>
+    	<groupId>com.google.cloud</groupId>
+    	<artifactId>google-cloud-pubsub</artifactId>
+    	<version>1.32.0</version>
+	</dependency>
+	
 	
 	<!-- dependency>
     	<groupId>com.google.api.grpc</groupId>

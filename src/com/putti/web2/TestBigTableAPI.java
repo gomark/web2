@@ -80,6 +80,8 @@ public class TestBigTableAPI extends HttpServlet {
             	response.getWriter().append("\nNot found rowKey=" + rowKey);
             }
             
+            response.setStatus(200);
+            
             long mil = System.currentTimeMillis();
             log.info("currentMil " + String.valueOf(mil));
             conn.close();
@@ -106,7 +108,8 @@ public class TestBigTableAPI extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		this.readSingleRowFromKey(request, response);
+		
 	}
 
 }
