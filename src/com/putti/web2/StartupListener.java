@@ -38,11 +38,9 @@ public class StartupListener implements ServletContextListener {
 	private void doPubSub() {
 		System.out.println("working for pubsub");
 		
-		String subscriptionId = "bq-results-sub1";  // atest-pub-java1
-		String projectId = "putti-project2";
-		
-		
-		
+		String subscriptionId = "atest-pub-java1";  // atest-pub-java1, bq-results-sub1 
+		String projectId = "putti-project";
+						
 		try {
 			ProjectSubscriptionName subscriptionName = ProjectSubscriptionName.of(projectId, subscriptionId);
 			subscriber = Subscriber.newBuilder(subscriptionName, new MessageReceiverExample()).build();
