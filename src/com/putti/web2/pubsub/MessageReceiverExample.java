@@ -11,6 +11,8 @@ public class MessageReceiverExample implements MessageReceiver {
 		System.out.println("messageId:" + message.getMessageId());
 		System.out.println("Data:" + message.getData().toStringUtf8());
 		
+		consumer.ack();
+		
 		for (String key : message.getAttributesMap().keySet()) {
 			System.out.println("key=" + key + ", value=" + message.getAttributesMap().get(key).toString());
 		}
