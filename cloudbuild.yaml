@@ -3,10 +3,6 @@ steps:
   args: ['clean', 'install']
 - name: 'gcr.io/cloud-builders/docker'
   args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/quickstart-image:$COMMIT_SHA', '.' ]
-#images: ['gcr.io/$PROJECT_ID/quickstart-image:$COMMIT_SHA']
-#images:
-#  - 'gcr.io/$PROJECT_ID/quickstart-image:latest'
-#steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ["push", "gcr.io/$PROJECT_ID/quickstart-image:$COMMIT_SHA"]
 - name: 'gcr.io/cloud-builders/kubectl'
@@ -14,9 +10,7 @@ steps:
   - 'set'
   - 'image'
   - 'deployment'
-  #- 'tomcat-1'
   - '${_DEPLOYMENT_NAME}'
-  #- 'my-tomcat=gcr.io/$PROJECT_ID/quickstart-image:$COMMIT_SHA'
   - '${_POD_SPEC}=gcr.io/$PROJECT_ID/quickstart-image:$COMMIT_SHA'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=${_CLOUDSDK_COMPUTE_ZONE}'
