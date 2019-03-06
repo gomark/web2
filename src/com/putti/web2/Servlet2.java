@@ -27,7 +27,7 @@ public class Servlet2 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		long mil = System.currentTimeMillis();
-		response.getWriter().append("Canary Newer Version at GKE").append(request.getContextPath()).append(String.valueOf(mil));
+		response.getWriter().append("This is production").append(request.getContextPath()).append(String.valueOf(mil));
 		
 		System.out.println("currentMil " + String.valueOf(mil));
 	}
